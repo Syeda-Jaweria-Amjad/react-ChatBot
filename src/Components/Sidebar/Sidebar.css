@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #f9f9f9;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 2000;
+  
+  }
+
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar header {
+    font-size: 14px;
+    color: white;
+    text-align: right;
+    margin-right: 20px;
+    line-height: 60px;
+    background: #f9f9f9;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  
+  .sidebar .unorder-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 85px;
+  }
+  
+  /* Custom Scrollbar Styles */
+  .sidebar .unorder-list::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust the width of the scrollbar */
+  }
+  
+  .sidebar .unorder-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    /* Track color */
+  }
+  
+  .sidebar .unorder-list::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Thumb color */
+    border-radius: 10px;
+    /* Thumb border radius */
+  }
+  
+  .sidebar .unorder-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Thumb color on hover */
+  }
+  
+  .sidebar .unorder-list ul a {
+    display: block;
+    height: 100%;
+    width: 90%;
+    line-height: 40px;
+    font-size: 16px;
+    color: black;
+    
+    transition: 0.4s;
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+
+  .unorder-list ul{
+    padding-left: 1rem;
+  }
+  
+  ul li:hover a,ul li:first-child a {
+    background: #ECECEC;
+    cursor: pointer;
+  }
+  
+  .sidebar ul a i {
+    margin-right: 16px;
+  }
+  
+  
+  
+  .toggle-btn {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 3000;
+  }
+  
+  .icon-xl-heavy {
+    fill: #000;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .main {
+    top: -4px;
+    margin-left: 50px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main.sidebar-closed {
+    margin-left: 0;
+  }
+  
+  .main.sidebar-open {
+    margin-left: 240px;
+  }
+  
+  
+  .chat-gpt-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin:0 10px 20px 10px;
+    /* margin-bottom: 20px; */
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .chat-gpt-icon:hover{
+    background: #ececec;
+  }
+  
+  .chat-gpt-icon .gpt-icon {
+    /* padding: 4px 5px 4px 5px; */
+    padding: 5px;
+    border: 1px solid #E8E8E8;
+    border-radius: 50%;
+    background: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .chat-gpt-icon .gpt-text {
+  
+    font-size: 14px;
+    color: #333;
+    /* Adjust color as per your design */
+  }
+  
+  .fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* text-align: center; */
+    line-height: 20px;
+    cursor: pointer;
+    padding:0 10px 10px 10px;
+    background-color: #f9f9f9;
+    /* Background color for the fixed-bottom container */
+  
+  }
+  
+  .bottom-data {
+    /* margin: 2px; */
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    /* Adjust the gap between items */
+    background: #f9f9f9;
+    /* Background color for the container */
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .bottom-data:hover {
+    background: #ececec;
+    /* Background color on hover */
+  }
+  
+  .bottom-icon {
+    flex-shrink: 0;
+    /* padding: 5px; */
+    border: 1px solid black;
+    border-radius: 50%;
+    /* Prevents icon from shrinking */
+  }
+  
+  .bottom-icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    /* Adjust width of the icon container */
+    height: 28px;
+    /* Adjust height of the icon container */
+    border-radius: 50%;
+    /* Rounded shape for the icon container */
+  
+  }
+  
+  .bottom-icon svg {
+    width: 16px;
+    /* Adjust width of the SVG icon */
+    height: 16px;
+    /* Adjust height of the SVG icon */
+    fill: currentColor;
+    /* Ensures SVG inherits text color */
+  }
+  
+  .bottom-text {
+    flex-grow: 1;
+    /* Allows text to grow and fill available space */
+    margin-left: 5px;
+    margin-top: 8px;
+    /* Adjust the margin between icon and text */
+  }
+  
+  .bottom-highlighted-text {
+    font-weight: bold;
+    /* Bold text for highlighted text */
+    font-size: 14px;
+    /* Adjust font size as per your design */
+    color: #333;
+    /* Text color for highlighted text */
+    margin-bottom: 4px;
+    /* Adjust bottom margin */
+    text-align: left;
+    width: 100%;
+  }
+  
+  .bottom-dim-text {
+    font-size: 12px;
+    /* Adjust font size for secondary text */
+    color: #666;
+    /* Text color for secondary text */
+    display: block;
+  }
+  
+  @media (max-width: 776px) {
+    .main.sidebar-open {
+      margin-left: 0px;
+    }
+  }
